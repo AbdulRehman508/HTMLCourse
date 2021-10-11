@@ -10,24 +10,51 @@
                 <h3>Admission Form</h1>
                 <hr />
             </div>
-            <div id="personalInformation">
-                <h1>Personal Information</h1>
                 <form>
-                    <label>Name:</label>
-                    <input type="text" placeholder="Enter Name" /><br><br>
-                    <label>Father Name:</label>
-                    <input type="text" placeholder="Enter Father Name" /><br><br>
-                    <label>CNIC:</label>
-                    <input type="number" required placeholder="Enter CNIC" /><br><br>
-                    <label>Favorite Color:</label>
-                    <input type="color" required placeholder="Enter Color" /><br><br>
-                    <label>D-O-B:</label>
-                    <input type="date" required placeholder="Enter DOB" /><br><br>
-                    <label>E-mail:</label>
-                    <input type="email" required placeholder="Enter E-mail" />
+                    <div id="personalInformation">
+                        <h1>Personal Information</h1>
+                        <label>Name:</label>
+                        <input type="text" placeholder="Enter Name" /><br><br>
+                        <label>Father Name:</label>
+                        <input type="text" placeholder="Enter Father Name" /><br><br>
+                        <label>CNIC:</label>
+                        <input type="number" required placeholder="Enter CNIC" /><br><br>
+                        <label>Favorite Color:</label>
+                        <input type="color" required placeholder="Enter Color" /><br><br>
+                        <label>D-O-B:</label>
+                        <input type="date" required placeholder="Enter DOB" /><br><br>
+                        <label>E-mail:</label>
+                        <input type="email" required placeholder="Enter E-mail" />
+                    </div>
+                    <hr />
+                    <div id="residentialInformation">
+                        <h1>Residential Information</h1>
+                        <label>City Name:</label>
+                        <input type="text" placeholder="Enter City Name" /><br><br>
+                        <label>Province:</label>
+                        <select>
+                            <option disabled>Please Select Provice</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Sindh">Sindh</option>
+                            <option value="Sarhad">Sarhad</option>
+                            <option value="Balochistan">Balochistan</option>
+                        </select> <br><br>                   
+                        <label>Country:</label>
+                        <select>
+                            <option disabled>Please Select Country</option>
+                            <option value="Pakistan">Pakistan</option>
+                            <option value="Dubai">Dubai</option>
+                            <option value="America">America</option>
+                            <option value="UK">UK</option>
+                        </select><br><br> 
+                        <label>Gender:</label>
+                        <input type="radio" name="gender" required/>Male
+                        <input type="radio" name="gender" required/>Female
+                        <input type="radio" name="gender" required/>Other
+                    </div>
+                    <hr>
+
                 </form>
-                <hr />
-            </div>
         </div>
         
 
