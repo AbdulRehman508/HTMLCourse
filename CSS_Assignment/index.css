@@ -1,0 +1,30 @@
+.header{
+    background-color: gray;
+    height: 80px;
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: right;
+}
+.header > h1 {
+    padding-left: 1%;
+}
+.body{
+    background-color: red;
+    height: 350px;
+    width: 100%;
+}
+.navigate{
+    background-color: yellow;
+    height: 350px;
+    width: 20%;
+    padding: 10px;
+}
+.navItem{
+    background-color: blue;
+    color:white;
+    height: 50px;
+    margin: 10px;
+    font-size: 22px;
+    padding: 20px 0px 0px 20px;
+}
