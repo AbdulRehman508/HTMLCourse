@@ -10,12 +10,13 @@
     padding-left: 1%;
 }
 .body{
-    background-color: red;
+    background-color: skyblue;
     height: 350px;
     width: 100%;
+    display: flex;
 }
 .navigate{
-    background-color: yellow;
+    /* background-color: yellow; */
     height: 350px;
     width: 20%;
     padding: 10px;
@@ -27,4 +28,20 @@
     margin: 10px;
     font-size: 22px;
     padding: 20px 0px 0px 20px;
+}
+.content{
+    background-color: green;
+    height: 350px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+.contentText{
+    padding: 10px 20px;
+}
+.contentText > h1{
+    color: white;
+}
+.contentText > p{
+    color: white;
 }
