@@ -6,3 +6,12 @@
     justify-content: center;
     align-items: center;
 }
+.navManage{
+    margin-top: 5px;
+    width: 100%;
+    height: 50px;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
