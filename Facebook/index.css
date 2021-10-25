@@ -1,0 +1,87 @@
+#mainHeader{
+    background-color: #1c1e21;
+    width: 100%;
+    height: 60px;
+    display: flex;
+}
+.logoHeader{
+    width: 25%;
+    height: 60px;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+}
+.searchField{
+    width: 130%;
+    height: 38px;
+    border-radius: 25px;
+    text-indent: 20%;
+    border: none;
+    background-color: gray;
+}
+::placeholder{
+    color: lightgray;
+}
+.icon{
+    position: absolute;
+    color: lightgray;
+    top: 13%;
+    left: 5%;
+}
+.navHeader{
+    width: 50%;
+    height: 60px;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+}
+.navIcon{
+    padding: 15px 40px;
+    color: whitesmoke;
+}
+.navIcon:hover{
+    cursor: pointer;
+    background-color: lightgray;
+    color: black;
+}
+.profileHeader{
+    width: 25%;
+    height: 60px;
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+}
+.profileName{
+    width: 40%;
+    background-color: lightgray;
+    border-radius: 30px;
+    height: 75%;
+    margin-left: 2%;
+    display: flex;
+    align-items: center;
+}
+.profileName:hover{
+    cursor: pointer;
+}
+.profileImage{
+    width: 25%;
+    height: 75%;
+    border-radius: 50%;
+    margin-left: 5%;
+    background-color:  black;
+}
+.profileIcon{
+    width: 12%;
+    height: 65%;
+    border-radius: 50%;
+    margin-left: 2%;
+    background-color: lightgray;
+}
+.proIcon{
+    padding: 30% 24%;
+    color: whitesmoke;
+}
+.proIcon:hover{
+    cursor: pointer;
+    color: black;
+}
