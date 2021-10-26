@@ -1,8 +1,16 @@
-#mainHeader{
+body{
+        background-color: #1c1e21;
+        margin: 0%;
+
+}
+#headerSection{
     background-color: #1c1e21;
     width: 100%;
     height: 60px;
     display: flex;
+    border-bottom: 2px solid gray;
+    position: sticky;
+    top: 0px;
 }
 .logoHeader{
     width: 25%;
@@ -41,8 +49,7 @@
 }
 .navIcon:hover{
     cursor: pointer;
-    background-color: lightgray;
-    color: black;
+    background-color: #494F55;
 }
 .profileHeader{
     width: 25%;
@@ -84,4 +91,193 @@
 .proIcon:hover{
     cursor: pointer;
     color: black;
+}
+#bodySection{
+    /* background-color: #1c1e21; */
+    width: 100%;
+    display: flex;
+}
+.sideNav{
+    /* background-color: yellow; */
+    width: 25%;
+    height: 600px;
+    overflow: auto;
+    position: sticky;
+    top: 60px
+}
+.sideNavData{
+    width: 92%;
+    height: 9%;
+    /* background-color: white; */
+    margin-top: 1%;
+    margin-left: 3%;
+    display: flex;
+    align-items: center;
+    /* border-bottom: 2px solid gray ; */
+    color: whitesmoke;
+}
+.sideNavData2{
+    width: 92%;
+    height: 9%;
+    /* background-color: white; */
+    color: whitesmoke;
+    margin-left: 3%;
+    display: flex;
+    align-items: center;
+}
+.sideNavData:hover{
+    cursor: pointer;
+    background-color: #494F55;
+    border-radius: 10px;
+}
+.sideNavData2:hover{
+    cursor: pointer;
+    background-color: #494F55;
+    border-radius: 10px;
+}
+.sideImage{
+    width: 50px;
+    height: 45px;
+    border-radius: 50%;
+    margin-left: 15%;
+    margin-top: 5%;
+}
+.font{
+    font-size: larger;
+    font-family: sans-serif;
+}
+.content{
+    /* background-color: red; */
+    width: 50%;
+    /* height: 1000px; */
+}
+.bodyContent{
+    width: 90%;
+    height: 9%;
+    background-color: #494F55;
+    margin: 0 auto;
+    margin-top: 2%;
+    border-radius: 20px;
+}
+.bodyContent1{
+    width: 90%;
+    height: 48%;
+    background-color: #494F55;
+    margin: 0 auto;
+    margin-top: 2%;
+    border-radius: 20px;
+}
+.bodyContent2{
+    width: 90%;
+    height: 43%;
+    background-color: #494F55;
+    margin: 0 auto;
+    margin-top: 2%;
+    border-radius: 20px;
+}
+.searchField1{
+    margin-left: 2%;
+    width: 83%;
+    height: 38px;
+    border-radius: 25px;
+    text-indent: 5%;
+    border: none;
+    background-color: gray;
+}
+.innerBody{
+    display: flex;
+    padding-top: 1%;
+}
+.innerBody2{
+    display: flex;
+    justify-content: center;
+    padding-top: 1%;
+}
+.photo{
+    width: 30%;
+    height: 35px;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.photo > p {
+    margin-left: 5%;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 0em;
+}
+.photo:hover{
+    cursor: pointer;
+}
+.like{
+    width: 100%;
+    height: 35px;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+.like > p {
+    margin-left: 3%;
+    color: white;
+}
+.like > p:hover{
+    cursor: pointer;
+}
+.icon1{
+    position: absolute;
+    left: 280%;
+    top: 28%;
+    cursor: pointer;
+}
+.icon2{
+    left: 260%;
+    /* right: 20%; */
+    position: absolute;
+    bottom: 38%;
+    cursor: pointer;
+}
+.icon3{
+    position: absolute;
+    left: 240%;
+    bottom: 38%;
+    cursor: pointer;
+
+}
+.icon4{
+    position: absolute;
+    left: 220%;
+    bottom: 38%;
+    cursor: pointer;
+
+}
+.searchField2{
+    margin-left: 2%;
+    width: 296%;
+    height: 38px;
+    border-radius: 25px;
+    text-indent: 5%;
+    border: none;
+    background-color: gray;
+}
+.photoContent{
+    display: flex;
+    align-items: center;
+}
+.photoContent > h3 {
+    color: white;
+}
+.photoContent > h3 > p {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: white;
+}
+.rightContent{
+    background-color: blue;
+    width: 25%;
+    height: 600px;
+    overflow: auto;
+    position: sticky;
+    top: 60px
 }
