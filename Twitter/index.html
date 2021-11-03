@@ -4,14 +4,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
     <title>Twitter</title>
 </head>
 
 <body>
-    <button class="btn btn-primary">Submit</button>
+    <div class="main-container">
+        <div class="navBar">
+            <i class="fab fa-twitter fa-2x logoIcon"></i>
+            <div class="navList">
+                <ul class="list">
+                    <li class="listIn">
+                        <i class="fas fa-home fa-lg" style="margin-left: 5%;"></i>
+                        <p class="font">Home</p>
+                    </li>
+                    <li class="listIn">
+                        <i class="fab fa-slack-hash fa-lg" style="margin-left: 5%;"></i>
+                        <p class="font">Explore</p>
+                    </li>
+                    <li class="listIn">
+                        <i class="fas fa-bell fa-lg" style="margin-left: 5%;"></i>
+                        <p class="font">Notification</p>
+                    </li>
+                    <li class="listIn">
+                        <i class="far fa-envelope fa-lg" style="margin-left: 5%;"></i>
+                        <p class="font">Messages</p>
+                    </li>
+                    <li class="listIn">
+                        <i class="far fa-bookmark fa-lg" style="margin-left: 5%;"></i>
+                        <p class="font">Bookmarks</p>
+                    </li>
+                    <li class="listIn">
+                        <i class="fas fa-list fa-lg" style="margin-left: 5%;"></i>
+                        <p class="font">Lists</p>
+                    </li>
+                    <li class="listIn">
+                        <i class="far fa-user fa-lg" style="margin-left: 5%;"></i>
+                        <p class="font">Profile</p>
+                    </li>
+                    <li class="listIn">
+                        <i class="fas fa-ellipsis-h fa-lg" style="margin-left: 5%;"></i>
+                        <p class="font">More</p>
+                    </li>
+                </ul>
+                <div class="mt-5">
+                    <button class="btn btn-primary">Tweet</button>
+                </div>
+                <ul class="list">
+                    <li class="listInUser mt-5">
+                        <img src="user.png" alt="Image not found" class="sideImage">
+                        <p class="font">Abdul Rehman</p>
+                        <i class="fas fa-ellipsis-h fa-lg" style="margin-left: auto; margin-right: 5%;"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="navBarIcon">
+            <i class="fab fa-twitter fa-2x logoIcon"></i>
+            <div class="navListIcon">
+                <ul class="list">
+                    <li class="listIcon">
+                        <i class="fas fa-home fa-lg"></i>
+                    </li>
+                    <li class="listIcon">
+                        <i class="fab fa-slack-hash fa-lg"></i>
+                    </li>
+                    <li class="listIcon">
+                        <i class="fas fa-bell fa-lg"></i>
+                    </li>
+                    <li class="listIcon">
+                        <i class="far fa-envelope fa-lg"></i>
+                    </li>
+                    <li class="listIcon">
+                        <i class="far fa-bookmark fa-lg"></i>
+                    </li>
+                    <li class="listIcon">
+                        <i class="fas fa-list fa-lg"></i>
+                    </li>
+                    <li class="listIcon">
+                        <i class="far fa-user fa-lg"></i>
+                    </li>
+                    <li class="listIcon">
+                        <i class="fas fa-ellipsis-h fa-lg"></i>
+                    </li>
+                    <li class="listIcon mt-5">
+                        <img src="user.png" alt="Image not found" class="sideImage">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="body-section">
+            <div class="d-flex">
+                <div class="body-section-homeHead">
+                    <p>Home</p>
+                    <i class="fas fa-ellipsis-h fa-2x moreIcon"></i>
+                </div>
+                <div class="body-section-searchHead">
+                    <div class="form-group position-relative" style="width: 90%;">
+                        <input type="text" placeholder="Search Twitter" class="form-control searhfield">
+                        <i class="fas fa-search fa-lg searchIcon"></i>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="d-flex">
+                <div class="body-section-homeHead">
+
+                </div>
+                <div class="body-section-searchHead">
+    
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- <div class="container-fluid d-flex mainHead fixed-top">
+                <div class="logotwiter">
+                    <i class="fab fa-twitter fa-2x logoIcon"></i>
+                    <div>
+                        <ul>
+                            <li>
+                                <i class="fas fa-home fa-2x"></i>
+                                <p>Home</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="homehead">
+                    <p>Home</p>
+                    <i class="fas fa-ellipsis-h fa-2x moreIcon"></i>
+                </div>
+                <div class="searchtwiter">
+                    <div class="form-group position-relative" style="width: 90%;">
+                        <input type="text" placeholder="Search Twitter" class="form-control searhfield">
+                        <i class="fas fa-search fa-lg searchIcon"></i>
+                    </div>
+                </div>
+        </div> -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
