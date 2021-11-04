@@ -25,12 +25,22 @@
     background-color: thistle;
 }
 .navBar{
-    width: 22%;
+    width: 23%;
+    overflow: auto;
     /* background-color: blue; */
     height: 100vh;
     padding-left: 52px;
     padding-left: 50px;
     padding-top: 15px;
+    position: sticky;
+    top: 0;
+}
+.headHome{
+    display: flex;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 222;
 }
 .logoIcon{
     /* background-color: red; */
@@ -85,12 +95,12 @@
 }
 .body-section{
     width: 78%;
-    background-color: rebeccapurple;
+    /* background-color: rebeccapurple; */
 }
 .body-section-homeHead{
     width: 65%;
-    background-color: red;
-    height: 9vh;
+    /* background-color: red; */
+    /* height: 9vh; */
     display: flex;
     align-items: center;
     padding-left: 10px;
@@ -121,9 +131,10 @@
 }
 .body-section-searchHead{
     width: 35%;
-    background-color: yellow;
-    height: 9vh;
+    /* background-color: yellow; */
+    /* height: 9vh; */
     padding-top: 7px;
+    padding-bottom: 7px;
 }
 .searchtwiter{
     width: 30%;
@@ -174,6 +185,134 @@
     background-color: lightgray;
     border-radius: 20px ;
 }
+.body-section-body{
+    background-color: red;
+    width: 65%;
+}
+.body-section-searchbody{
+    /* background-color: yellow; */
+    width: 35%;
+}
+.trend{
+    display: flex;
+    align-items: center;
+    width: 95%;
+    padding-top: 4%;
+}
+.trend-for-you{
+    background-color: lightgray;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 5%;
+    border-radius: 10px;
+}
+.listInTrend{
+    width: 149%;
+    height: 93px;
+    display: flex;
+    padding-right: 5%;
+    align-items: center;
+}
+.listInTrend:hover{
+    cursor: pointer;
+    background-color: whitesmoke;
+}
+.fontTrend{
+    font-weight: bold;
+    font-family: inherit;
+    font-size: 20px;
+    margin-left: 3%;
+    color: black;
+    margin-bottom: 0%;
+}
+.fontuser{
+    font-weight: 500;
+    font-size: 18px;
+    font-family: sans-serif;
+    margin-left: 5%;
+    color: black;
+    margin-bottom: 0%;
+}
+.more{
+    margin-left: auto; 
+    margin-right: 5%;
+}
+.showMore{
+    text-decoration: none;
+    font-size: 18px;
+    font-family: inherit;
+    font-weight: 500;
+}
+.listInFollow{
+    display: flex;
+    align-items: center;
+    /* background-color: aqua; */
+    color: black;
+    width: 119%;
+    height: 70px;
+    position: relative;
+}
+.listInFollow:hover{
+    background-color:whitesmoke;
+    cursor: pointer;
+}
+.listInFollow:hover > .profilePage{
+    display: block;
+}
+.followImg{
+    width: 70px;
+    height: 65px;
+    border-radius: 50%;
+    margin-left: 3%;
+}
+.linkFollow{
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 1%;
+    margin-top: 6%;
+    display: none !important;
+}
+.fontfollow{
+    font-weight: 500;
+    font-size: 15px;
+    font-family: sans-serif;
+    margin-left: 2%;
+    color: black;
+    margin-bottom: 0%;
+}
+.bttn{
+    margin-left: auto;
+    margin-right: 5%;
+    border-radius: 20px !important;
+}
+.profilePage{
+    display: none;
+    background-color: whitesmoke;
+    width: 90%;
+    position: absolute;
+    bottom: 100%;
+    left: 5%;
+    margin: auto;
+    border-radius: 10px;
+    padding-bottom: 1%;
+}
+.profileFollowBtn{
+    margin-left: auto;
+    border-radius: 20px !important;
+    height: max-content !important;
+}
+/* .followLink{
+    display: none !important;
+    text-decoration: none;
+    background-color: black; 
+    margin-left: 33%;
+    font-weight: 600;
+    font-family: inherit;
+}*/
+.bttn:focus{
+    outline: 0;
+    box-shadow: none !important; 
+}
 @media only screen and (max-width:992px){
     /* .mainHead{
         flex-direction: column;
@@ -190,6 +329,9 @@
     .body-section-searchHead{
         display: none;
     }
+    .body-section-searchbody{
+        display: none;
+    }
     .navBar{
         display: none;
     }
@@ -202,6 +344,9 @@
     }
     .body-section{
         width: 90%;
+    }
+    .body-section-body{
+        width: 100%;
     }
 }
 @media only screen and (max-width:768px){
@@ -225,6 +370,53 @@
 @media only screen and (max-width:425px){
     .body-section-homeHead{
         padding-right: 25px;
+    }
+}
+@media only screen and (max-width:1024px){
+    .listInTrend{
+        width: 117%;
+        height: 93px;
+        display: flex;
+        padding-right: 10%;
+        align-items: center;
+    }
+    .listInTrend:hover{
+        background: none;
+    }
+    .logoIcon:hover{
+        background: none;
+    }
+    .moreIcon:hover{
+        background: none;
+    }
+    .navBar{
+        padding-left: 20px;
+    }
+    .fontuser{
+        margin-left: 2%;
+    }
+    .more{
+        margin-right: 12%;
+    }
+    .bttn{
+        display: none !important;
+    }
+    .linkFollow{
+        display: block !important;
+    }
+    .listInFollow:hover{
+        background: none;
+    }
+    .followImg{
+        width: 90px;
+        height: 75px;
+    }
+    .profilePage{
+        display: none !important;
+    }
+    .headHome{
+        position: sticky;
+        top: -1% !important;
     }
 }
 
