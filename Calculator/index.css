@@ -1,0 +1,13 @@
+.cal-body{
+    background-color: red;
+    width: 25%;
+    margin: auto;
+    margin-top: 5%;
+    height: 80vh;
+    border-radius: 10px;
+}
+.field{
+    width: 96%;
+    margin: auto;
+    padding-top: 2%;
+}
