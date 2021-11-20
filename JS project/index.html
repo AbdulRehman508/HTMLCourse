@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
+            /* 1st project color flipper */
+        /* @import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
 
             main {
             min-height: calc(100vh - 3rem);
@@ -45,7 +46,62 @@
             .btn-hero:hover {
             color: #fff;
             background: #222;
-            }
+            } */
+
+
+        .review {
+            background: rgb(145, 226, 188);
+            height: auto;
+            width: 270px;
+            border-radius: 15px;
+            margin: auto;
+            padding: 10px;
+            margin-top: 30px;
+            box-shadow: 5px 5px 5px #32917d;
+            align-items: center;
+        }
+          
+        .review__items {
+            align-items: center;
+            justify-content: space-evenly;
+            width: 250px;
+            padding: 10px;
+            align-items: center;
+        }
+          
+        .review__items img {
+            height: 250px;
+            width: 250px;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 4px 15px;
+        }
+          
+        .review__items h1 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+        }
+          
+        .review__items p {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 14px;
+        }
+          
+        .review__button {
+            text-align: center;
+            padding: 10px;
+        }
+          
+        .review__button button {
+            color: rgb(192, 229, 192);
+            background: green;
+            font-weight: bold;
+        }
+          
+        .review__items {
+            display: none;
+        }
+
+
     </style>
 </head>
 <body>
@@ -57,9 +113,48 @@
     </div> -->
 
     <!-- 2nd project complete -->
-    <h1 id="result">0</h1>
+
+    <!-- <h1 id="result">0</h1>
     <button id="plusButton">+</button>
-    <button id="minusButton">-</button>
+    <button id="minusButton">-</button> -->
+
+    <!-- 3rd project complete -->
+
+    <div class="review">
+        <div class="review__items">
+            <img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190710102234/download3.png" />
+            <h1>GeeksforGeeks</h1>
+            <p>
+                Let's learn to create a review 
+                carousel using JavaScript.
+            </p>
+  
+        </div>
+  
+        <div class="review__items">
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20210101144014/gfglogo.png" />
+            <h1>Geek Here</h1>
+            <p>
+                Very useful site to learn cool 
+                stuff. Improve your skills.
+            </p>
+  
+        </div>
+  
+        <div class="review__items">
+            <img src="https://media.geeksforgeeks.org/img-practice/courses/GfG_Logo.png" />
+            <h1>Hello there!</h1>
+            <p>
+                Have a nice day, Please visit 
+                us again. Nice to meet you
+            <p>
+        </div>
+  
+        <div class="review__button">
+            <button id="prev" onclick="previousReview()">PREV</button>
+            <button id="next" onclick="nextReview()">NEXT</button>
+        </div>
+    </div>
 </body>
     <!-- 1st project Complete -->
 
@@ -80,7 +175,8 @@
     </script> -->
 
         <!-- 2nd project complete -->
-    <script>
+
+    <!-- <script>
         let counter = 0;
         const result = document.getElementById("result");
         const plusButton = document.getElementById("plusButton");
@@ -94,5 +190,38 @@
             counter --;
             result.innerText = counter
         }
-    </script>
+    </script> -->
+
+            <!-- 3rd project complete -->
+
+    <script>
+         let rev = 0;
+        carousel(rev);
+  
+        function previousReview() {
+            rev = rev - 1;
+            carousel(rev);
+        }
+  
+        function nextReview() {
+            rev = rev + 1;
+            carousel(rev);
+        }
+  
+        function carousel(review) {
+            let reviews = document.getElementsByClassName("review__items");
+            if (review >= reviews.length) {
+                review = 0;
+                rev = 0;
+            }
+            if (review < 0) {
+                review = reviews.length - 1;
+                rev = reviews.length - 1;
+            }
+            for (let i = 0; i < reviews.length; i++) {
+                reviews[i].style.display = "none";
+            }
+            reviews[review].style.display = "block";
+        }
+    </script>        
 </html>
