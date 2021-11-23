@@ -3,106 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-            /* 1st project color flipper */
-        /* @import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
+    <title>JS Project</title>
+    <link rel="stylesheet" href="index.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-            main {
-            min-height: calc(100vh - 3rem);
-            display: grid;
-            place-items: center;
-            }
-            .container {
-            text-align: center;
-            }
-            .container h2 {
-            background: #222;
-            color: #fff;
-            padding: 1rem;
-            border-radius: 0.25rem;
-            margin-bottom: 2.5rem;
-            }
-            .color {
-            color: hsl(205, 78%, 60%);
-            }
-
-            .btn-hero {
-            font-family: "Ranchers", sans-serif;
-            text-transform: uppercase;
-            background: transparent;
-            color: #222;
-            letter-spacing: 0.1rem;
-            display: inline-block;
-            font-weight: 700;
-            transition: all 0.3s linear;
-            border: 2px solid #222;
-            cursor: pointer;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-            border-radius: 0.25rem;
-            font-size: 1rem;
-            padding: 0.75rem 1.25rem;
-            }
-            .btn-hero:hover {
-            color: #fff;
-            background: #222;
-            } */
-
-
-        .review {
-            background: rgb(145, 226, 188);
-            height: auto;
-            width: 270px;
-            border-radius: 15px;
-            margin: auto;
-            padding: 10px;
-            margin-top: 30px;
-            box-shadow: 5px 5px 5px #32917d;
-            align-items: center;
-        }
-          
-        .review__items {
-            align-items: center;
-            justify-content: space-evenly;
-            width: 250px;
-            padding: 10px;
-            align-items: center;
-        }
-          
-        .review__items img {
-            height: 250px;
-            width: 250px;
-            border-radius: 5px;
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 4px 15px;
-        }
-          
-        .review__items h1 {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-size: 20px;
-        }
-          
-        .review__items p {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-size: 14px;
-        }
-          
-        .review__button {
-            text-align: center;
-            padding: 10px;
-        }
-          
-        .review__button button {
-            color: rgb(192, 229, 192);
-            background: green;
-            font-weight: bold;
-        }
-          
-        .review__items {
-            display: none;
-        }
-
-
-    </style>
 </head>
 <body>
     <!-- 1st project Complete -->
@@ -120,7 +24,7 @@
 
     <!-- 3rd project complete -->
 
-    <div class="review">
+    <!-- <div class="review">
         <div class="review__items">
             <img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190710102234/download3.png" />
             <h1>GeeksforGeeks</h1>
@@ -154,7 +58,49 @@
             <button id="prev" onclick="previousReview()">PREV</button>
             <button id="next" onclick="nextReview()">NEXT</button>
         </div>
-    </div>
+    </div> -->
+
+    <!-- 4th project complete -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="nav-header">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <!--  -->
+            <!-- id="navbarSupportedContent" -->
+
+  
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+            
+           
+        </div>
+      </nav>
+    
+
 </body>
     <!-- 1st project Complete -->
 
@@ -174,7 +120,7 @@
         }
     </script> -->
 
-        <!-- 2nd project complete -->
+    <!-- 2nd project complete -->
 
     <!-- <script>
         let counter = 0;
@@ -192,9 +138,9 @@
         }
     </script> -->
 
-            <!-- 3rd project complete -->
+    <!-- 3rd project complete -->
 
-    <script>
+    <!-- <script>
          let rev = 0;
         carousel(rev);
   
@@ -223,5 +169,26 @@
             }
             reviews[review].style.display = "block";
         }
-    </script>        
+    </script>         -->
+
+    <!-- 4th project complete -->
+
+    <script>
+        const navToggle = document.querySelector('.navbar-toggler');
+        const links = document.querySelector('.navbar-nav');
+
+        navToggle.addEventListener('click',function(){
+            // console.log("links",links.classList)
+            // console.log("links",links.classList.contains("random"));
+            // console.log("links",links.classList.contains("navbar-nav"));
+
+            if(links.classList.contains("show-link")){
+                links.classList.remove("show-link");
+            }else{
+                links.classList.add("show-link");
+            }
+        })
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
 </html>
