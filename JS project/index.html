@@ -112,15 +112,31 @@
 
     <!-- 6th project complete -->
 
-    <button id="myBtn">Open Modal</button>
+    <!-- <button id="myBtn">Open Modal</button>
 
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
         <p>Some text in the Modal..</p>
         </div>
+    </div> -->
+
+    <!-- 7th project complete -->
+
+    <!-- <button class="accordion">Section 1</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
 
+    <button class="accordion">Section 2</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <button class="accordion">Section 3</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div> -->
 
 </body>
     <!-- 1st project Complete -->
@@ -225,7 +241,7 @@
 
     <!-- 6th project complete -->
 
-    <script>
+    <!-- <script>
 
         var modal = document.getElementById("myModal");
         
@@ -250,7 +266,27 @@
             modal.style.display = "none";
           }
         }
-    </script>
+    </script> -->
+    
+    <!-- 7th project complete -->
+
+    <!-- <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+              panel.style.maxHeight = null;
+            } else {
+              panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+          });
+        }
+    </script> -->
+    
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </html>
