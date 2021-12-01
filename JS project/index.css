@@ -231,7 +231,7 @@
 
           /* 9th Project background video */
           
-          * {
+          /* * {
             box-sizing: border-box;
           }
           
@@ -271,4 +271,47 @@
           #myBtn:hover {
             background: #ddd;
             color: black;
+          } */
+  
+          /* 10th Project background video */
+
+          body {
+            margin: 0;
+            background-color: #f1f1f1;
+            font-family: Arial, Helvetica, sans-serif;
+          }
+          #navbar {
+            /* background-color: #333; */
+            position: fixed;
+            width: 100%;
+            /* display: flex; */
+            transition: top 0.3s;
+          }
+          .fixed-nav {
+            background-color: #333;
+            position: fixed;
+            width: 100%;
+            display: block;
+            transition: top 0.3s;
+          }
+          #navbar a {
+            float: left;
+            color: black;
+            text-align: center;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 17px;
+          }
+          #navbar a:hover {
+            background-color: #ddd;
+          }
+          #news{
+            background-color: red;
+            width: 100%;
+            height: 500px;
+          }
+          #contact{
+            background-color: yellow;
+            width: 100%;
+            height: 500px;
           }

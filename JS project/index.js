@@ -185,15 +185,39 @@
 
 // 9th project complete
 
-const video = document.getElementById("myVideo");
-const btn = document.getElementById("myBtn");
+    // const video = document.getElementById("myVideo");
+    // const btn = document.getElementById("myBtn");
 
-function videoPlay() {
-  if (video.paused) {
-    video.play();
-    btn.innerHTML = "Pause";
-  } else {
-    video.pause();
-    btn.innerHTML = "Play";
-  }
+    // function videoPlay() {
+    //   if (video.paused) {
+    //     video.play();
+    //     btn.innerHTML = "Pause";
+    //   } else {
+    //     video.pause();
+    //     btn.innerHTML = "Play";
+    //   }
+    // }
+
+// 10th project complete
+
+window.onscroll = function() {
+    scrollFunction()
+};
+
+const nav = document.getElementById("navbar");
+const topLink = document.querySelector("fixed-nav");
+function scrollFunction() {
+    const scrollHeight = window.pageYOffset;
+    const navHeight = nav.getBoundingClientRect().height;
+    if(scrollHeight > navHeight){
+        nav.classList.add('fixed-nav');
+    }else{
+        nav.classList.remove('fixed-nav');
+    }
+
+//   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+//     document.getElementById("navbar").style.top = "0";
+//   } else {
+//     document.getElementById("navbar").style.top = "50px";
+//   }
 }
