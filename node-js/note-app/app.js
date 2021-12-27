@@ -16,3 +16,8 @@
 
 // console.log(name,'\n',sum,'\n',msg,'\n',post);
 
+//  3rd lec of Node.js
+
+    const validator = require('validator');
+
+    console.log(validator.isURL('googlle'));
