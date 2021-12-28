@@ -45,48 +45,76 @@
 
 // 3rd Lec Argument Parsing with Yargs Part 2
 
-     const yargs = require("yargs");
+    //  const yargs = require("yargs");
 
-    yargs.command({
-        command: 'add',
-        describe: 'Add a new note',
-        builder:{
-            title:{
-                describe:'Note Title ... !',
-                demandOption: true,
-                type:'string',
-            },
-            body:{
-                describe:'Note Body ... !',
-                demandOption: true,
-                type:'string',
-            }
-        },
-        handler: function(argv){
-            console.log("Title:" + argv.title);
-            console.log("Body:" + argv.body);
-            // console.log('Adding a new notes .. !',argv)
+    // yargs.command({
+    //     command: 'add',
+    //     describe: 'Add a new note',
+    //     builder:{
+    //         title:{
+    //             describe:'Note Title ... !',
+    //             demandOption: true,
+    //             type:'string',
+    //         },
+    //         body:{
+    //             describe:'Note Body ... !',
+    //             demandOption: true,
+    //             type:'string',
+    //         }
+    //     },
+    //     handler: function(argv){
+    //         console.log("Title:" + argv.title);
+    //         console.log("Body:" + argv.body);
+    //         // console.log('Adding a new notes .. !',argv)
+    //     }
+    // })
+    // yargs.command({
+    //     command: 'remove',
+    //     describe: 'Remove a note',
+    //     handler: function(){
+    //         console.log('Removing a notes .. !')
+    //     }
+    // })
+    // yargs.command({
+    //     command: 'list',
+    //     describe: 'List Your note',
+    //     handler: function(){
+    //         console.log('Listing a notes .. !')
+    //     }
+    // })
+    // yargs.command({
+    //     command: 'read',
+    //     describe: 'Read a note',
+    //     handler: function(){
+    //         console.log('Read a notes .. !')
+    //     }
+    // })
+    // yargs.parse();
+
+// 4th Lec Storing Data with JSON
+
+    const fs = require('fs');
+
+    // const book = 
+    //     {
+    //     title: 'Information Teachnology',
+    //     author: 'Abdul Rehman'
+    //     }
+       
+      const person = 
+        {
+           name:"Mathew",
+           planet:"Plato",
+           age: 25, 
+        // title: 'Information Teachnology',
+        // author: 'Abdul Rehman'
         }
-    })
-    yargs.command({
-        command: 'remove',
-        describe: 'Remove a note',
-        handler: function(){
-            console.log('Removing a notes .. !')
-        }
-    })
-    yargs.command({
-        command: 'list',
-        describe: 'List Your note',
-        handler: function(){
-            console.log('Listing a notes .. !')
-        }
-    })
-    yargs.command({
-        command: 'read',
-        describe: 'Read a note',
-        handler: function(){
-            console.log('Read a notes .. !')
-        }
-    })
-    yargs.parse();
+
+    const jsonData = JSON.stringify(person);
+    fs.writeFileSync('book.json',jsonData);
+    const dataBuffer = fs.readFileSync('book.json');
+    const dataJson = dataBuffer.toString();
+    const data = JSON.parse(dataJson);
+    console.log(data.name);
+
+
