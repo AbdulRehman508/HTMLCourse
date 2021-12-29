@@ -117,49 +117,89 @@
     // const data = JSON.parse(dataJson);
     // console.log(data.name);
 
-// 5th Lec Adding a Note
+// 5th & 6th Lec Adding / removing a Note
 
-    const notes = require('./addNotes.js')
-    const yargs = require("yargs");
+    // const notes = require('./addNotes.js')
+    // const yargs = require("yargs");
 
-    yargs.command({
-        command: 'add',
-        describe: 'Add a new note',
-        builder:{
-            title:{
-                describe:'Note Title ... !',
-                demandOption: true,
-                type:'string',
+    // yargs.command({
+    //     command: 'add',
+    //     describe: 'Add a new note',
+    //     builder:{
+    //         title:{
+    //             describe:'Note Title ... !',
+    //             demandOption: true,
+    //             type:'string',
+    //         },
+    //         body:{
+    //             describe:'Note Body ... !',
+    //             demandOption: true,
+    //             type:'string',
+    //         }
+    //     },
+    //     handler: function(argv){
+    //         notes.addNote(argv.title, argv.body);
+    //     }
+    // })
+    //     yargs.command({
+    //     command: 'remove',
+    //     describe: 'Remove a note',
+    //     builder:{
+    //         title:{
+    //             describe:'Note Title ... !',
+    //             demandOption: true,
+    //             type:'string',
+    //         }
+    //     },
+    //     handler: function(argv){
+    //        notes.removeNotes(argv.title);
+    //     }
+    // })
+    //     yargs.command({
+    //     command: 'read',
+    //     describe: 'Read a note',
+    //     handler: function(){
+    //        notes.loadNotes();
+    //     }
+    // })
+    // yargs.parse();
+
+// 7th Lec Arrow Function
+
+    const square = (x) => x + x;
+    console.log(square(5));
+
+    const event = {
+        name :'Angular Developer',
+        developerList: ['Mamo','Afzal','Hamza','Abdul Rehman'],
+        printName: function(){
+            console.log("Abdul Rehman is a ? ..." + this.name),
+            this.developerList.forEach(element => {
+                console.log(element + " is Web Developer ...!")
+            })
+        }
+
+    }
+    event.printName()
+
+    const tasks = {
+        tasks: [
+            {
+                name : 'Abdul Rehman',
+                complete : true
             },
-            body:{
-                describe:'Note Body ... !',
-                demandOption: true,
-                type:'string',
+            {
+                name : 'Mamo',
+                complete : false
+            },
+            {
+                name : 'Afzal', 
+                complete : false
             }
-        },
-        handler: function(argv){
-            notes.addNote(argv.title, argv.body);
+        ],
+        getIncompleteTask(){
+           return this.tasks.filter(item => item.complete === false)
+            
         }
-    })
-        yargs.command({
-        command: 'remove',
-        describe: 'Remove a note',
-        builder:{
-            title:{
-                describe:'Note Title ... !',
-                demandOption: true,
-                type:'string',
-            }
-        },
-        handler: function(argv){
-           notes.removeNotes(argv.title);
-        }
-    })
-        yargs.command({
-        command: 'read',
-        describe: 'Read a note',
-        handler: function(){
-           notes.loadNotes();
-        }
-    })
-    yargs.parse();
+    }
+    console.log(tasks.getIncompleteTask())
