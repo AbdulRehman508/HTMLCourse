@@ -41,8 +41,8 @@
     const fs = require('fs');
     const addNote = (title, body) => {
         const notes = loadNotes()
-        const duplicateData = notes.filter(notes => notes.title === title);
-        if(duplicateData.length === 0){
+        const duplicateData = notes.find(notes => notes.title === title);
+        if(!duplicateData){
             notes.push({
                 title:title,
                 body:body
@@ -65,11 +65,16 @@
             console.log(element.title + "      "+ element.body);           
         });
     }
-
+    const readNotes = (title) => {
+        const notes = loadNotes();
+        const findNotes = notes.find(item => item.title === title);
+        console.log("your note is exist ... ?" + findNotes.title);
+    }
     const saveNotes = (notes) => {
         const dataJson = JSON.stringify(notes);
         fs.writeFileSync('notes.json',dataJson);
     }
+
     const loadNotes = () => {
             const dataBuffer = fs.readFileSync('notes.json');
             const dataJSON = dataBuffer.toString();
@@ -79,6 +84,6 @@
     module.exports = {
         addNote: addNote,
         removeNotes: removeNotes,
-        loadNotes: loadNotes,
-        listNotes: listNotes
+        readNotes: readNotes,
+        listNotes: listNotes,
     }
