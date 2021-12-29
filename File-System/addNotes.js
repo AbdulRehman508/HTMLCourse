@@ -1,10 +1,7 @@
 
-
 const fs = require('fs');
-
 const addNote = function(title, body){
     const notes = loadNotes()
-
     const duplicateData = notes.filter(function(notes){
         return notes.title === title
     })
@@ -14,26 +11,32 @@ const addNote = function(title, body){
             body:body
         })
         saveNotes(notes);
-        console.log("Your Note is added ... !");
+        console.log("Your note is added ... !");
     }else{
-        console.log("Your note is already exits ...!");
+        console.log("Your note is already exist ... !");
     }
+    
+}
+const removeNotes = function(title){
+   const notes = loadNotes()
+   const dataToKeep = notes.filter(function(notes){
+       return notes.title !== title;
+   })
+   saveNotes(dataToKeep);
 }
 const saveNotes = function(notes){
     const dataJson = JSON.stringify(notes);
     fs.writeFileSync('notes.json',dataJson);
 }
 const loadNotes = function(){
-    try{
         const dataBuffer = fs.readFileSync('notes.json');
         const dataJSON = dataBuffer.toString();
-        return JSON.parse(dataJSON); 
-    }catch(e){
-        return []
-    }
-    
+        return JSON.parse(dataJSON);
 }
 
+    
 module.exports = {
-    addNote: addNote
+    addNote: addNote,
+    removeNotes: removeNotes,
+    loadNotes: loadNotes
 }
