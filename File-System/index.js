@@ -93,28 +93,52 @@
 
 // 4th Lec Storing Data with JSON
 
-    const fs = require('fs');
+    // const fs = require('fs');
 
-    // const book = 
-    //     {
-    //     title: 'Information Teachnology',
-    //     author: 'Abdul Rehman'
-    //     }
+    // // const book = 
+    // //     {
+    // //     title: 'Information Teachnology',
+    // //     author: 'Abdul Rehman'
+    // //     }
        
-      const person = 
-        {
-           name:"Mathew",
-           planet:"Plato",
-           age: 25, 
-        // title: 'Information Teachnology',
-        // author: 'Abdul Rehman'
+    //   const person = 
+    //     {
+    //        name:"Mathew",
+    //        planet:"Plato",
+    //        age: 25, 
+    //     // title: 'Information Teachnology',
+    //     // author: 'Abdul Rehman'
+    //     }
+
+    // const jsonData = JSON.stringify(person);
+    // fs.writeFileSync('book.json',jsonData);
+    // const dataBuffer = fs.readFileSync('book.json');
+    // const dataJson = dataBuffer.toString();
+    // const data = JSON.parse(dataJson);
+    // console.log(data.name);
+
+// 5th Lec Adding a Note
+
+    const notes = require('./addNotes.js')
+    const yargs = require("yargs");
+
+    yargs.command({
+        command: 'add',
+        describe: 'Add a new note',
+        builder:{
+            title:{
+                describe:'Note Title ... !',
+                demandOption: true,
+                type:'string',
+            },
+            body:{
+                describe:'Note Body ... !',
+                demandOption: true,
+                type:'string',
+            }
+        },
+        handler: function(argv){
+            notes.addNote(argv.title, argv.body);
         }
-
-    const jsonData = JSON.stringify(person);
-    fs.writeFileSync('book.json',jsonData);
-    const dataBuffer = fs.readFileSync('book.json');
-    const dataJson = dataBuffer.toString();
-    const data = JSON.parse(dataJson);
-    console.log(data.name);
-
-
+    })
+    yargs.parse();
