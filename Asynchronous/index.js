@@ -1,6 +1,8 @@
 
 // 1st Asynchronous Basic
 
+const request = require("request")
+
     // console.log('Starting ')
     // setTimeout(()=>{
     //     console.log('After 2 second')
@@ -34,12 +36,31 @@
 
 // 6th Error Handling
 
-const request = require('request');
-const url = "http://api.weatherstack.com/current?access_key=b25f0dab8921bc25dabf05014d5aa1f3";
-request({url:url, json: true}, (error,response) => {
-       if(!error){
-           console.log("Your request is : " + error)
-       }else{
-           console.log("It is current Temprature  .... " + response.body.current.temperature + " .... Chance of rain " + response.body.current.precip);
-       }
-})
+// const request = require('request');
+// const url = "http://api.weatherstack.com/current?access_key=b25f0dab8921bc25dabf05014d5aa1f3";
+// request({url:url, json: true}, (error,response) => {
+//        if(!error){
+//            console.log("Your request is : " + error)
+//        }else{
+//            console.log("It is current Temprature  .... " + response.body.current.temperature + " .... Chance of rain " + response.body.current.precip);
+//        }
+// })
+
+// 7th The Callback function
+
+setTimeout(() => {
+    console.log("After 2 second .. !")
+    getName()
+},2000)
+ 
+const getName = () =>{
+    setTimeout(() => {
+        const userName = ['Jess','Jam','Deblu Tee','Gill']
+        userName.filter(name =>{
+            if(name.length <= 4){
+                console.log("Name is : " + name);
+            }
+            
+        })
+    },2000)
+}
