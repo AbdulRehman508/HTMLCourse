@@ -65,9 +65,15 @@
 
 // 8th The Callback Abstraction
 
-const  {geoCode } = require('./utiles/geoCode.js')
+const  { geoCode } = require('./utiles/geoCode.js')
+const  { foreCast } = require('./utiles/forecast.js')
 
 geoCode('philadelphia',(error,data)=>{
+    console.log("Error", error);
+    console.log("Data", data);
+})
+
+foreCast(37.8267,-122.4233,(error,data)=>{
     console.log("Error", error);
     console.log("Data", data);
 })
