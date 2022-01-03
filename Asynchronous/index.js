@@ -1,8 +1,6 @@
 
 // 1st Asynchronous Basic
 
-const request = require("request")
-
     // console.log('Starting ')
     // setTimeout(()=>{
     //     console.log('After 2 second')
@@ -48,19 +46,89 @@ const request = require("request")
 
 // 7th The Callback function
 
-setTimeout(() => {
-    console.log("After 2 second .. !")
-    getName()
-},2000)
- 
-const getName = () =>{
-    setTimeout(() => {
-        const userName = ['Jess','Jam','Deblu Tee','Gill']
-        userName.filter(name =>{
-            if(name.length <= 4){
-                console.log("Name is : " + name);
-            }
-            
-        })
-    },2000)
-}
+    // setTimeout(() => {
+    //     console.log("After 2 second .. !")
+    //     getName()
+    // },2000)
+    
+    // const getName = () =>{
+    //     setTimeout(() => {
+    //         const userName = ['Jess','Jam','Deblu Tee','Gill']
+    //         userName.filter(name =>{
+    //             if(name.length <= 4){
+    //                 console.log("Name is : " + name);
+    //             }
+                
+    //         })
+    //     },2000)
+    // }
+
+// 8th The Callback Abstraction
+
+//  const request = require('request');
+//  const geocoding = "https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1IjoiYWJkdWxyZWhtYW4wMDEiLCJhIjoiY2t4dTFsaThkNXJicjJ1c3Rqem8zb3d6NiJ9.bM1KrM9k5K_U9EkYkXwmuw&limit=1"
+
+//  request({ url: geocoding, json:true},(error,response) => {
+//         const latitude = response.body.features[0].center[1];
+//         const longitude = response.body.features[0].center[0]; 
+//         console.log(latitude,longitude);
+//  })
+
+// const geoCode = (Callback) => {
+
+//     const geocoding = "https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1IjoiYWJkdWxyZWhtYW4wMDEiLCJhIjoiY2t4dTFsaThkNXJicjJ1c3Rqem8zb3d6NiJ9.bM1KrM9k5K_U9EkYkXwmuw&limit=1"
+    
+//     request({url:geocoding, json:true},(error,responce) => {
+//         if(!error){
+//             Callback("Your Value is :" + error);
+//         }else{
+//             Callback(undefined,{
+//                 latitude: responce.body.features[0].center[1],
+//                 longtitude: responce.body.features[0].center[1],
+//                 Location: responce.body.features[0].center[1]
+//             })
+//         }
+//     })
+// }
+// geoCode((error,data)=>{
+//     console.log("Error", error);
+//     console.log("Data", data);
+// })
+
+// 9th ES6 Aside Object Property Shorthand and Destructuring
+
+    // Object Property Shorthand
+   
+        const name = "Abdul Rehman"
+        const ageOf = 24 
+
+        const user = {
+                name,
+                ageOf
+        }
+        console.log(user);
+
+    // Object Property Destructuring
+
+        const product = {
+            label: 'Queen star product',
+            name: 'Popcop',
+            salePrice: 10
+        }
+        // 1st way
+            const label = product.label   
+        // OR
+            console.log(product.label);
+        // 2nd way
+            const {label, name} = product;
+            console.log('Lable:',label)
+            console.log('Name:',name);
+
+        // 3rd way
+
+        const productLunch = (order , {label,name}) =>{
+              console.log(order),
+              console.log(label),
+              console.log(name)  
+        }
+            productLunch('00123RGB',product);
