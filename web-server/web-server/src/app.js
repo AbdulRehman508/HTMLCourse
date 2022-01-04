@@ -4,7 +4,11 @@ const path = require('path')
 const app = express()
 
 const publicDictectories = path.join(__dirname,'../public');
+const viewDictectories = path.join(__dirname,'../templates');
+
+app.set('views',viewDictectories);
 app.set('view engine','hbs')
+
 app.use(express.static(publicDictectories));
 
 app.get('',(req, res) => {
