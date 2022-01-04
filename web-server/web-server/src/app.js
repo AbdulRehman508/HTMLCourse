@@ -1,11 +1,14 @@
 
 const express = require('express')
 const path = require('path')
+const hbs = require('hbs')
 const app = express()
 
 const publicDictectories = path.join(__dirname,'../public');
-const viewDictectories = path.join(__dirname,'../templates');
+const viewDictectories = path.join(__dirname,'../templates/views');
+const partialPaths = path.join(__dirname,'../templates/partials')
 
+hbs.registerPartials(partialPaths);
 app.set('views',viewDictectories);
 app.set('view engine','hbs')
 
@@ -13,14 +16,14 @@ app.use(express.static(publicDictectories));
 
 app.get('',(req, res) => {
     res.render('index',{
-        name:'Abdul Rehman',
-        Address: "Faisalabad"
+        name:'Home',
+        // Address: "Faisalabad"
     });
 })
 app.get('/about',(req, res) => {
     res.render('about',{
-        name:'Hamza',
-        Address: "Lahore"
+        name:'About',
+        // Address: "Lahore"
     });
 })
 // app.get('',(req,res)=>{
