@@ -1,13 +1,24 @@
 
 const express = require('express')
 const path = require('path')
-const publicDictectories = path.join(__dirname,'../public');
-
-
 const app = express()
 
+const publicDictectories = path.join(__dirname,'../public');
+app.set('view engine','hbs')
 app.use(express.static(publicDictectories));
 
+app.get('',(req, res) => {
+    res.render('index',{
+        name:'Abdul Rehman',
+        Address: "Faisalabad"
+    });
+})
+app.get('/about',(req, res) => {
+    res.render('about',{
+        name:'Hamza',
+        Address: "Lahore"
+    });
+})
 // app.get('',(req,res)=>{
 //     res.send('<h1>Wellcome in Express Server ..!</h1>')
 // })
