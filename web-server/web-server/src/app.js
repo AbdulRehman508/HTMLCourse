@@ -26,6 +26,11 @@ app.get('/about',(req, res) => {
         // Address: "Lahore"
     });
 })
+app.get('*',(req, res) => {
+    res.render('404-Page',{
+        errorMessage:'404 Page Not Found .. !'
+    })
+})
 // app.get('',(req,res)=>{
 //     res.send('<h1>Wellcome in Express Server ..!</h1>')
 // })
