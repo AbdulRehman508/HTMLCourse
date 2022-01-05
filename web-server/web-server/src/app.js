@@ -15,10 +15,18 @@ app.set('view engine','hbs')
 app.use(express.static(publicDictectories));
 
 app.get('',(req, res) => {
-    res.render('index',{
-        name:'Home',
-        // Address: "Faisalabad"
-    });
+    if(!req.query.search){
+        res.send({
+            error: "Please must provide a search term ...!"
+        })
+    }else{
+
+        res.render('index',{
+            name:'Weather',
+            search: req.query.search
+            // Address: "Faisalabad"
+        });
+    }
 })
 app.get('/about',(req, res) => {
     res.render('about',{
