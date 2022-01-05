@@ -1,10 +1,19 @@
 console.log("Wellcome in static file");
 
 
-let resValue;
+
 fetch('http://puzzle.mead.io/puzzle').then(res =>{
     res.json().then( res =>{
-        resValue = res['puzzle'];
         console.log(res);
     })
+})
+
+const formSearch = document.getElementById('searchForm');
+const searchField = document.getElementById('search');
+
+formSearch.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    const location = searchField.value;
+    console.log('location',location);
+    searchField.value = '';
 })
