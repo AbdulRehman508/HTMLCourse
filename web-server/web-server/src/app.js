@@ -2,6 +2,10 @@
 const express = require('express')
 const path = require('path')
 const hbs = require('hbs')
+
+const { foreCast } = require('./utiles/forecast.js');
+const { geoCode } = require('./utiles/geoCode.js');
+
 const app = express()
 
 const publicDictectories = path.join(__dirname,'../public');
@@ -15,18 +19,35 @@ app.set('view engine','hbs')
 app.use(express.static(publicDictectories));
 
 app.get('',(req, res) => {
-    if(!req.query.search){
-        res.send({
-            error: "Please must provide a search term ...!"
-        })
-    }else{
+    // if(!req.query.address){
+    //     res.send({
+    //         error: "Please must provide a search term ...!"
+    //     })
+    // }
 
+    // geoCode(req.query.address, (error,{latitude,longtitude,location})=>{
+    //     if(error)
+    //     {
+    //        return res.send({error})
+    //     }
+    //     foreCast(latitude,longtitude,(error,forCastData)=>{
+    //         if(error)
+    //         {
+    //             return res.send({error})
+    //         }
+    //         res.send({
+    //             forcast: forCastData,
+    //             location,
+    //             address: req.query.address
+    //         })
+    //     })
+    // })
         res.render('index',{
             name:'Weather',
             search: req.query.search
             // Address: "Faisalabad"
         });
-    }
+
 })
 app.get('/about',(req, res) => {
     res.render('about',{
@@ -63,4 +84,4 @@ app.get('*',(req, res) => {
 //     res.send('<h1>Contact of expressjs serve : +1 02354 786 ..!</h1>')
 // })
 
-app.listen(2000);
+app.listen(8888)
