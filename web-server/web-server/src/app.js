@@ -7,6 +7,7 @@ const { foreCast } = require('./utiles/forecast.js');
 const { geoCode } = require('./utiles/geoCode.js');
 
 const app = express()
+const port = process.env.PORT || 8888
 
 const publicDictectories = path.join(__dirname,'../public');
 const viewDictectories = path.join(__dirname,'../templates/views');
@@ -84,4 +85,6 @@ app.get('*',(req, res) => {
 //     res.send('<h1>Contact of expressjs serve : +1 02354 786 ..!</h1>')
 // })
 
-app.listen(8888)
+app.listen(port,()=>{
+    console.log('Server is up on port:' + port)
+}) 
