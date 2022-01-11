@@ -24,31 +24,54 @@ MongoClient.connect(connectionURL,{useNewUrlParser: true}, (error,client)=>{
 
         const db = client.db(databaseName)
 
-        
-        db.collection('user-details').findOne(
-            {
-                _id: new ObjectID('61d8174bc667fbbe7b9db7bc'),
-            }
-            ,(error,user)=>{
-                if(error){
-                    console.log("Unable to Fetch document")
-                }else{
-                    console.log(user);
-                }
+        //  db.collection('users').updateOne({
+        //     _id: new ObjectID('61d806e49be4c7f91df91eb7')
+        // },{
+        //     $inc : {
+        //         age: 1
+        //     }
+        // }).then((result)=>{
+        //     console.log("Document is Update .. !" + result)
+        // }).catch((error)=>{
+        //     console.log("Something is wrong .. !" + error)
+        // })  
 
+         db.collection('users').updateMany({
+           age: 31 && 30
+        },{
+            $set : {
+                age: 26
             }
-        )
+        }).then((result)=>{
+            console.log("Document is Update .. !" + result)
+        }).catch((error)=>{
+            console.log("Something is wrong .. !" + error)
+        }) 
 
-        db.collection('user-details').find(
-            {
-                completed: false
-            }).toArray((error,user)=>{
-            if(error){
-                console.log("Unable to Fetch document")
-            }else{
-                console.log(user);
-            }
-        })
+        // db.collection('user-details').findOne(
+        //     {
+        //         _id: new ObjectID('61d8174bc667fbbe7b9db7bc'),
+        //     }
+        //     ,(error,user)=>{
+        //         if(error){
+        //             console.log("Unable to Fetch document")
+        //         }else{
+        //             console.log(user);
+        //         }
+
+        //     }
+        // )
+
+        // db.collection('user-details').find(
+        //     {
+        //         completed: false
+        //     }).toArray((error,user)=>{
+        //     if(error){
+        //         console.log("Unable to Fetch document")
+        //     }else{
+        //         console.log(user);
+        //     }
+        // })
 
         // db.collection('users').insertOne(
         //         {
