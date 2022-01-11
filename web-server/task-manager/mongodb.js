@@ -24,6 +24,14 @@ MongoClient.connect(connectionURL,{useNewUrlParser: true}, (error,client)=>{
 
         const db = client.db(databaseName)
 
+            db.collection('users').deleteMany({
+                age: 25 && 26 
+            }).then((result)=>{
+                console.log("Document is Delete .. !" + result)
+            }).catch((error)=>{
+                console.log("Something is wrong .. !" + error)
+            }) 
+
         //  db.collection('users').updateOne({
         //     _id: new ObjectID('61d806e49be4c7f91df91eb7')
         // },{
@@ -36,17 +44,17 @@ MongoClient.connect(connectionURL,{useNewUrlParser: true}, (error,client)=>{
         //     console.log("Something is wrong .. !" + error)
         // })  
 
-         db.collection('users').updateMany({
-           age: 31 && 30
-        },{
-            $set : {
-                age: 26
-            }
-        }).then((result)=>{
-            console.log("Document is Update .. !" + result)
-        }).catch((error)=>{
-            console.log("Something is wrong .. !" + error)
-        }) 
+        //  db.collection('users').updateMany({
+        //    age: 31 && 30
+        // },{
+        //     $set : {
+        //         age: 26
+        //     }
+        // }).then((result)=>{
+        //     console.log("Document is Update .. !" + result)
+        // }).catch((error)=>{
+        //     console.log("Something is wrong .. !" + error)
+        // }) 
 
         // db.collection('user-details').findOne(
         //     {
