@@ -22,15 +22,15 @@ MongoClient.connect(connectionURL,{useNewUrlParser: true}, (error,client)=>{
     }else{
         console.log("Connection is correctly ... Wellcome in MongoDB")
 
-        const db = client.db(databaseName)
+             db = client.db(databaseName)
 
-            db.collection('users').deleteMany({
-                age: 25 && 26 
-            }).then((result)=>{
-                console.log("Document is Delete .. !" + result)
-            }).catch((error)=>{
-                console.log("Something is wrong .. !" + error)
-            }) 
+            // db.collection('users').deleteMany({
+            //     age: 25 && 26 
+            // }).then((result)=>{
+            //     console.log("Document is Delete .. !" + result)
+            // }).catch((error)=>{
+            //     console.log("Something is wrong .. !" + error)
+            // }) 
 
         //  db.collection('users').updateOne({
         //     _id: new ObjectID('61d806e49be4c7f91df91eb7')
