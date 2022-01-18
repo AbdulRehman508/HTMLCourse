@@ -11,17 +11,26 @@ app.use(express.json())
 
 // CreateEnd Point
 
-app.post('/users',(req,res)=>{
+app.post('/users', async (req,res)=>{
     const user = new createUser(req.body)
-    user.save().then(()=>{
-        res.send("User is successfully Created ... !");
-    }).catch((e)=>{
-        res.status(400).send(e)
-    })
+    try{
+        await user.save();
+        res.status(200).send("User is successfully Created ... !" + user);
+    }catch(e){
+        res.status(400).send(e);
+    }
+
+    // user.save().then(()=>{
+    //     res.send("User is successfully Created ... !");
+    // }).catch((e)=>{
+    //     res.status(400).send(e)
+    // })
     // res.send('Testing .. !')
 })
 // Goal: CreatingEnd Point
+
 app.post('/task',(req,res)=>{
+
     const task = new taskModel(req.body)
     task.save().then(()=>{
         res.status(200).send(task  + "Task is send .. !")
@@ -32,12 +41,20 @@ app.post('/task',(req,res)=>{
 
 // ReadEnd Point
 
-app.get('/getUsers',(req, res)=>{      
-        createUser.find().then( users =>{
-            res.send(users)
-        }).catch( e =>{
-            res.status(400).send(e)
-        })
+app.get('/getUsers', async (req, res)=>{
+    
+    try{
+        const getUser = await createUser.find({})
+        res.status(200).send(getUser)
+    }catch(e){
+        res.status(400).send(e)
+    }
+
+        // createUser.find().then( users =>{
+        //     res.send(users)
+        // }).catch( e =>{
+        //     res.status(400).send(e)
+        // })
 })
 
 app.get('/getUsers/:id', (req, res) => {
