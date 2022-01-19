@@ -22,6 +22,17 @@ router.post('/users', async (req,res)=>{
     // res.send('Testing .. !')
 })
 
+// User Login
+
+router.post('/users/login', async (req,res) =>{ 
+    try{
+        const user = await createUser.findByCredentials(req.body.email, req.body.password)
+        res.status(200).send("User is Successfully Login" + user)
+    }catch(e){
+        res.status(400).send(e);
+    }
+})
+
 // ReadEnd Point
 
 router.get('/getUsers', async (req, res)=>{
