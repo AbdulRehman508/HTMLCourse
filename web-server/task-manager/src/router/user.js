@@ -2,14 +2,14 @@
 const express = require("express");
 const createUser = require('../model/models');
 const router = new express.Router();
-
 // CreateEnd Point
 
 router.post('/users', async (req,res)=>{
     const user = new createUser(req.body)
     try{
         await user.save();
-        res.status(200).send("User is successfully Created ... !" + user);
+        const token = await user.generateAuthToken()
+        res.status(200).send({ user , token});
     }catch(e){
         res.status(400).send(e);
     }
@@ -27,7 +27,8 @@ router.post('/users', async (req,res)=>{
 router.post('/users/login', async (req,res) =>{ 
     try{
         const user = await createUser.findByCredentials(req.body.email, req.body.password)
-        res.status(200).send("User is Successfully Login" + user)
+        const token = await user.generateAuthToken()
+        res.status(200).send({ user , token})
     }catch(e){
         res.status(400).send(e);
     }
