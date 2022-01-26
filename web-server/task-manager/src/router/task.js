@@ -27,7 +27,6 @@ router.post('/tasks', async (req,res)=>{
 
 router.post('/tasksCreate', auth, async (req,res)=>{
 
-    // const task = new taskModel(req.body)
     const task = new taskModel({
         ...req.body,
         owner: req.user._id
@@ -48,29 +47,38 @@ router.post('/tasksCreate', auth, async (req,res)=>{
 
 // Goal: ReadingEnd Point
 
-router.get('/getTasks', (req, res) => {      
-    taskModel.find({
-        path: 'getTasks',
-        match:{
-            completed: true
-        }
-    }).then( tasks =>{
-        res.send(tasks)
-    }).catch( e =>{
-        res.status(400).send(e)
-    })
-})
-// Not Working
-router.get('/getTasks/:id', (req, res) => {
-    const _id = req.params.id
-    createUser.findById(_id).then((task) => {
-        if (!task) {
+router.get('/getTasks', auth, async (req, res) => {   
+        // const match = {}
+        // if(req.query.completed){
+        //     match.completed = req.query.completed === 'true';
+        // }
+    try{
+        const task = await taskModel.find({match});
+        if(!task){
             return res.status(404).send()
         }
-        res.send(task)
-    }).catch((e) => {
+        // const tasked = await req.user.populate(task).execPopulate()
+        res.status(200).send(task)
+    }catch(e){
+        res.status(400).send(e)
+    }   
+    // taskModel.find({}).then( tasks =>{
+    //     res.send(tasks)
+    // }).catch( e =>{
+    // })
+})
+// Not Working
+router.get('/getTasks/:id', auth, async (req, res) => {
+    const _id = req.params.id
+    try{
+        const task = await taskModel.findOne({ _id, owner: req.user._id })
+        if(!task){
+            return res.status(404).send()
+        }
+        res.status(200).send(task)
+    }catch(e){
         res.status(500).send()
-    })
+    }
 })
 
 // Goal: updateEnd Point
