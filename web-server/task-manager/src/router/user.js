@@ -1,7 +1,7 @@
 
 const express = require("express");
 const createUser = require('../model/models');
-const auth = require('../middleware/auth')
+const { auth } = require('../middleware/auth')
 const router = new express.Router();
 
 // CreateEnd Point
@@ -38,7 +38,7 @@ router.post('/users/login', async (req,res) =>{
 
 // Logout User  Not working
 
-router.post('/users/logout', auth , async (req,res) => {
+router.post('/users/logout', async (req,res) => {
     try{
         req.user.tokens = req.user.tokens.filter((loginUser) => {
            return loginUser.token !== req.token
@@ -50,7 +50,7 @@ router.post('/users/logout', auth , async (req,res) => {
     }
 })
 
-router.post('/users/logoutAll', auth , async (req,res) => {
+router.post('/users/logoutAll', async (req,res) => {
     try{
         req.user.tokens = []
         await req.user.save()
@@ -62,14 +62,14 @@ router.post('/users/logoutAll', auth , async (req,res) => {
 
 // ReadEnd Point
 
-router.get('/getUsers', async (req, res)=>{
-    // res.send(req.user)    auth ,
-    try{
-        const getUser = await createUser.find({})
-        res.status(200).send(getUser)
-    }catch(e){
-        res.status(400).send(e)
-    }
+router.get('/getUsers/me', auth , async (req, res)=>{
+    res.send(req.user)
+    // try{
+    //     const getUser = await createUser.find({})
+    //     res.status(200).send(getUser)
+    // }catch(e){
+    //     res.status(400).send(e)
+    // }
 
         // createUser.find().then( users =>{
         //     res.send(users)

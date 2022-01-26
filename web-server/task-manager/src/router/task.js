@@ -24,7 +24,12 @@ router.post('/tasks', async (req,res)=>{
 // Goal: ReadingEnd Point
 
 router.get('/getTasks', (req, res) => {      
-    taskModel.find().then( tasks =>{
+    taskModel.find({
+        path: 'getTasks',
+        match:{
+            completed: true
+        }
+    }).then( tasks =>{
         res.send(tasks)
     }).catch( e =>{
         res.status(400).send(e)
