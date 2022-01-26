@@ -1,5 +1,7 @@
 const express = require("express");
-const taskModel = require('../model/task-model.js')
+const taskModel = require('../model/task-model.js');
+const auth  = require('../middleware/auth');
+
 const router = new express.Router();
 
 
@@ -7,6 +9,29 @@ const router = new express.Router();
 router.post('/tasks', async (req,res)=>{
 
     const task = new taskModel(req.body)
+    try{
+        await task.save();
+        res.status(200).send("Task is created" + task)
+    }catch(e){
+        res.status(400).send(e)
+    }
+
+    // task.save().then(()=>{
+    //     res.status(200).send(task  + "Task is send .. !")
+    // }).catch((e)=>{
+    //    res.status(400).send(e)
+    // })
+})
+
+// Goal: CreatingEnd Point with Auth
+
+router.post('/tasksCreate', auth, async (req,res)=>{
+
+    // const task = new taskModel(req.body)
+    const task = new taskModel({
+        ...req.body,
+        owner: req.user._id
+    })
     try{
         await task.save();
         res.status(200).send("Task is created" + task)

@@ -36,7 +36,7 @@ router.post('/users/login', async (req,res) =>{
     }
 })
 
-// Logout User  Not working
+// Logout User 
 
 router.post('/users/logout', auth, async (req, res) => {
     try {
@@ -93,9 +93,35 @@ router.get('/getUsers/:id', (req, res) => {
     })
 })
 
+// Both are working
+
 // UpdateEnd Point
 
-router.patch('/users/:id', async (req, res) => {
+// router.patch('/users/:id', async (req, res) => {
+//     const updates = Object.keys(req.body)
+//     const allowedUpdates = ['name', 'email', 'password', 'age']
+//     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
+
+//     if (!isValidOperation) {
+//         return res.status(400).send({ error: 'Invalid updates!' })
+//     }
+//     try {
+//         const user = await createUser.findById(req.params.id)
+//         updates.forEach((item) => user[item] = req.body[item])
+//         await user.save();
+    
+//         if (!user) {
+//             return res.status(404).send()
+//         }
+//         res.send(user)
+//     } catch (e) {
+//         res.status(400).send(e)
+//     }
+// })
+
+// UpdateEnd Point with Auth
+
+router.patch('/users/me', auth, async (req, res) => {
     const updates = Object.keys(req.body)
     const allowedUpdates = ['name', 'email', 'password', 'age']
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
@@ -104,32 +130,42 @@ router.patch('/users/:id', async (req, res) => {
         return res.status(400).send({ error: 'Invalid updates!' })
     }
     try {
-        const user = await createUser.findById(req.params.id)
-        updates.forEach((item) => user[item] = req.body[item])
-        await user.save();
-        // const user = await createUser.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true })
-    
-        if (!user) {
-            return res.status(404).send()
-        }
-        res.send(user)
+        updates.forEach((item) => req.user[item] = req.body[item])
+        await req.user.save();
+        res.send(req.user)
     } catch (e) {
         res.status(400).send(e)
     }
 })
 
+//Both are working
+
 // deletingEnd Point
 
-router.delete('/users/:id', async (req,res) => {
+// router.delete('/users/:id', async (req,res) => {
+//     try{
+//         const user = await createUser.findByIdAndDelete(req.params.id);
+//         if(!user){
+//             res.status(404).send("User Not found ... !")
+//         }
+//         res.send(user + "User is successfully Deleted ... !")
+//     }catch(e){
+//         res.status(400).send(e)
+//     }
+// })
+
+
+// deletingEnd Point with Auth
+
+router.delete('/users/me', auth, async (req, res) => {
     try{
-        const user = await createUser.findByIdAndDelete(req.params.id);
-        if(!user){
-            res.status(404).send("User Not found ... !")
-        }
-        res.send(user + "User is successfully Deleted ... !")
+        await req.user.remove()
+        res.send(req.user + {message : "User is successfully Deleted ... !" })
     }catch(e){
         res.status(400).send(e)
     }
 })
+
+
 
 module.exports = router
