@@ -53,7 +53,9 @@ router.get('/getTasks', auth, async (req, res) => {
         //     match.completed = req.query.completed === 'true';
         // }
     try{
-        const task = await taskModel.find({match});
+        // const limitValue = req.query.limit = 1;
+        const skipValue = req.query.skip = 0;
+        const task = await taskModel.find().limit().skip(skipValue).sort({createdAt:-1})
         if(!task){
             return res.status(404).send()
         }
