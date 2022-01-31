@@ -7,9 +7,22 @@ const router = new express.Router();
 
 // CreateEnd Point
 
-router.post('/users', async (req,res)=>{
+// const upload = multer({
+//     // dest: 'profile-image',
+//     limits:{
+//         fileSize: 1000000
+//     },
+//     fileFilter(req, file, cb){
+//         if(!file.originalname.match(/\.(jpg|png)$/)){
+//             return cb(new Error("Please Upload JPG or PNG Extension file ... !"))
+//         }
+//         cb(undefined, true)
+//     }
+// }) ,upload.single('profile')
+router.post('/users' , async (req,res)=>{
     const user = new createUser(req.body)
     try{
+        //req.user.profile = req.file.buffer
         await user.save();
         const token = await user.generateAuthToken()
         res.status(200).send({ user , token});
@@ -23,7 +36,9 @@ router.post('/users', async (req,res)=>{
     //     res.status(400).send(e)
     // })
     // res.send('Testing .. !')
-})
+}
+    //,(error, req, res, next)=>{res.status(400).send({error: error.message})}
+)
 
 // User Login
 
@@ -168,7 +183,7 @@ router.delete('/users/me', auth, async (req, res) => {
 })
 
 const upload = multer({
-    dest: 'profile-image',
+    // dest: 'profile-image',
     limits:{
         fileSize: 1000000
     },
@@ -180,7 +195,9 @@ const upload = multer({
     }
 })
 
-router.post("/users/me/profile", upload.single('profile'), (req, res) => {
+router.post("/users/me/profile",auth ,upload.single('profile'), async (req, res) => {
+    req.user.profile = req.file.buffer,
+    await req.user.save()
     res.send({message: "File is Upload"});
 },(error, req, res, next)=>{
     res.status(400).send({error: error.message})

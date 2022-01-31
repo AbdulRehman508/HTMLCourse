@@ -50,7 +50,10 @@ const userSchema = new mongoose.Schema({
             type: String,
             required: true
         }
-    }]
+    }],
+    profile:{
+        type: Buffer
+    }
 },{
     timestamps: true
 })
